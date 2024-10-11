@@ -1,0 +1,20 @@
+﻿@model List<TennisCoach.Models.Schedules>
+
+<h2 style="font-family: Arial, sans-serif; color: #2c3e50; text-align: center;">Upcoming Schedules for Coach</h2>
+
+<ul style="list-style: none; padding: 0; font-family: Arial, sans-serif;">
+    @foreach (var schedule in Model)
+    {
+        <li style="background-color: #ecf0f1; margin: 10px 0; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <span style="font-size: 18px; font-weight: bold; color: #34495e;">@schedule.Name</span>
+            <br />
+            <span style="font-size: 16px; color: #7f8c8d;">@schedule.Location</span>
+            <br /><br />
+            <a asp-action="EnrolledCoachs" style="font-size: 14px; color: #3498db; text-decoration: none;">View Enrolled Coachs</a>
+        </li>
+    }
+</ul>
+
+<div style="text-align: center; margin-top: 20px;">
+    <a asp-controller="Coach" asp-action="Index" class="btn" style="background-color: #2c3e50; border: none; padding: 10px 20px; border-radius: 4px; color: white; font-size: 16px; cursor: pointer;">Back</a>
+</div>

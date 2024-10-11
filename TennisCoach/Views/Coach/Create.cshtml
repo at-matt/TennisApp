@@ -1,0 +1,57 @@
+﻿@model TennisCoach.Models.Coaches
+
+<div class="container mt-4" style="font-family: Arial, sans-serif;">
+    <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Create Coach Profile</h2>
+
+    <form asp-action="CreateProfile" method="post" class="card p-4" style="background-color: #ecf0f1; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="form-group mb-3">
+            <label asp-for="FirstName" class="form-label" style="font-weight: bold; color: #34495e;"></label>
+            <input asp-for="FirstName" class="form-control" placeholder="Enter First Name" style="font-family: Arial, sans-serif;" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="LastName" class="form-label" style="font-weight: bold; color: #34495e;"></label>
+            <input asp-for="LastName" class="form-control" placeholder="Enter Last Name" style="font-family: Arial, sans-serif;" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Biography" class="form-label" style="font-weight: bold; color: #34495e;"></label>
+            <textarea asp-for="Biography" class="form-control" placeholder="Enter Biography" rows="4" style="font-family: Arial, sans-serif;"></textarea>
+            <span asp-validation-for="Biography" class="text-danger"></span>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary" style="background-color: #3498db; border: none; padding: 10px 20px; border-radius: 4px; color: white; font-family: Arial, sans-serif; font-size: 16px;">Create Profile</button>
+            <a asp-action="Details" class="btn btn-secondary" style="background-color: #6c757d; border: none; padding: 10px 20px; border-radius: 4px; color: white; font-family: Arial, sans-serif; font-size: 16px;">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    h2 {
+        color: #2c3e50;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #34495e;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+
+    .form-control {
+        padding: 0.75rem;
+    }
+</style>

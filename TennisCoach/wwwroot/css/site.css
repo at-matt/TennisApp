@@ -1,0 +1,48 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+body {
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000000;
+}
+
+h1 {
+    color: #000000; /* Change title color for visibility */
+}
+
+section {
+    backdrop-filter: blur(5px); /* Add a blur effect for a modern look */
+}
+
+/* Custom button color for tennis app style */
+.btn-success {
+    background-color: #4CAF50; /* Green color similar to tennis court */
+    border: none;
+}
+
+    .btn-success:hover {
+        background-color: #45a049; /* Darker green for hover effect */
+    }

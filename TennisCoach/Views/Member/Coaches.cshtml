@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TennisCoach.Models.Coaches>
+
+@{
+    ViewData["Title"] = "Coaches";
+}
+
+<h2>Coaches</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Biography</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var coach in Model)
+            {
+                <tr>
+                    <td>@coach.FirstName</td>
+                    <td>@coach.LastName</td>
+                    <td>@coach.Biography</td>
+                    <td>
+                        @if (coach.Photo != null)
+                        {
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(coach.Photo)" alt="Coach Photo" style="width:100px;height:auto;" />
+                        }
+                        else
+                        {
+                            <span>No Photo Available</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">No coaches found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>
